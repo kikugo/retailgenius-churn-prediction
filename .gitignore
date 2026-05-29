@@ -1,0 +1,27 @@
+# Data (regenerated locally via scripts/download_data.py + the pipeline)
+/data/
+
+# MLflow local tracking store
+mlruns/
+mlartifacts/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Sphinx build
+docs/_build/
+
+# OS
+.DS_Store
+
+# Local helper script (not part of the deliverable)
+scripts/replay_commits.sh
+
+# uv
+# (uv.lock IS committed for reproducibility)

@@ -1,0 +1,12 @@
+# Runtime dependencies (mirror of pyproject.toml [project.dependencies]).
+# Used by the MLflow Project env and by `pip install -r` workflows.
+# The authoritative, locked versions live in uv.lock.
+pandas>=2.0
+numpy>=1.26
+scikit-learn>=1.4
+xgboost>=2.0
+mlflow>=2.12
+shap>=0.45
+matplotlib>=3.8
+openpyxl>=3.1
+joblib>=1.3

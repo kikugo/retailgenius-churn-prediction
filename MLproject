@@ -1,0 +1,11 @@
+name: retailgenius-churn
+
+python_env: python_env.yaml
+
+entry_points:
+  main:
+    parameters:
+      model: {type: string, default: all}
+    command: "python -m churn.models.train_model --model {model}"
+  register:
+    command: "python -m churn.models.register_model"

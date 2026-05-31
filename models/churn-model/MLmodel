@@ -1,0 +1,22 @@
+artifact_path: file:///Users/kikugo/Downloads/AI_PM/churn-prediction/mlruns/193825247450361013/models/m-bcd3873c59794192a7793ea9e60c7549/artifacts
+flavors:
+  python_function:
+    data: model.ubj
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.11.6
+  xgboost:
+    code: null
+    data: model.ubj
+    model_class: xgboost.sklearn.XGBClassifier
+    model_format: ubj
+    xgb_version: 3.2.0
+mlflow_version: 3.12.0
+model_id: m-bcd3873c59794192a7793ea9e60c7549
+model_size_bytes: 833126
+model_uuid: m-bcd3873c59794192a7793ea9e60c7549
+prompts: null
+run_id: 68628c4214da4cf48f139ab44a21aec9
+utc_time_created: '2026-05-30 14:05:45.983082'

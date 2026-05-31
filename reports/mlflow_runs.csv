@@ -1,0 +1,4 @@
+model,metrics.precision,metrics.recall,metrics.roc_auc,metrics.accuracy,metrics.f1,params.max_depth,params.eval_metric,params.n_estimators,params.subsample,params.learning_rate,params.colsample_bytree,params.random_state,params.model_type,params.class_weight,params.max_iter,params.C
+xgboost,0.9890710382513661,0.9526315789473684,0.9991059379217274,0.9902309058614565,0.9705093833780161,5,logloss,400,0.9,0.1,0.9,42,xgboost,,,
+random_forest,0.9060773480662984,0.8631578947368421,0.9931623931623932,0.9618117229129662,0.8840970350404312,12,,300,,,,42,random_forest,balanced,,
+logreg,0.4410958904109589,0.8473684210526315,0.8849246513720198,0.7930728241563055,0.5801801801801801,,,,,,,,logreg,balanced,1000,1.0

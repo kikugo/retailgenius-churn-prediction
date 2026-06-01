@@ -14,7 +14,7 @@ Train a single model (used by the MLproject entry point)::
 """
 
 import argparse
-
+import os
 import mlflow
 import mlflow.sklearn
 import mlflow.xgboost
@@ -102,7 +102,7 @@ def log_model_artifact(name: str, model) -> None:
 def train_one(name: str, x_train, x_test, y_train, y_test) -> dict:
     """Train a single model inside its own MLflow run."""
     est, params = build_estimator(name)
-    with mlflow.start_run(run_name=name):
+    with mlflow.start_run(run_name=name, nested=True):
         mlflow.log_param("model_type", name)
         mlflow.log_params(params)
         est.fit(x_train, y_train)
@@ -125,7 +125,11 @@ def main() -> None:
     args = parser.parse_args()
 
     mlflow.set_tracking_uri(config.TRACKING_URI)
-    mlflow.set_experiment(config.EXPERIMENT_NAME)
+
+    # Only call set_experiment when the experiment wasn't already set by the
+    # MLflow CLI (which injects MLFLOW_EXPERIMENT_NAME / MLFLOW_EXPERIMENT_ID).
+    if not os.environ.get("MLFLOW_EXPERIMENT_NAME") and not os.environ.get("MLFLOW_EXPERIMENT_ID"):
+        mlflow.set_experiment(config.EXPERIMENT_NAME)
 
     x_train, x_test, y_train, y_test = load_split()
     names = (

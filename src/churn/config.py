@@ -64,4 +64,4 @@ TEST_SIZE = 0.2
 # MLflow ------------------------------------------------------------------
 EXPERIMENT_NAME = "retailgenius-churn"
 REGISTERED_MODEL_NAME = "churn-model"
-TRACKING_URI = f"file://{(PROJECT_ROOT / 'mlruns').as_posix()}"
+TRACKING_URI = f"file:///{(PROJECT_ROOT / 'mlruns').as_posix()}"
